@@ -2332,6 +2332,7 @@ class ParsingThread(QThread):
                             plugin_name = nfr.plugin.report_item_value(report_item, 'pluginName')
                             plugin_type = nfr.plugin.report_item_value(report_item, 'plugin_type')
                             risk_factor = nfr.plugin.report_item_value(report_item, 'risk_factor')
+                            severity = nfr.plugin.report_item_value(report_item, 'severity')
                             plugin_family = nfr.plugin.report_item_value(report_item, 'pluginFamily')
                             plugin_file_name = nfr.plugin.report_item_value(report_item, 'fname')
                             plugin_version = nfr.plugin.report_item_value(report_item, 'script_version')
@@ -2358,10 +2359,11 @@ class ParsingThread(QThread):
                                 worksheet.write(row_index, 9, plugin_id)
                                 worksheet.write(row_index, 10, plugin_name)
                                 worksheet.write(row_index, 11, plugin_type)
-                                if self.report_vulnerabilities_none_filter_out:
-                                    if risk_factor == 'None':
-                                        worksheet.set_row(row_index, options={'hidden': True})
-                                worksheet.write(row_index, 12, risk_factor)
+                                # if self.report_vulnerabilities_none_filter_out:
+                                #     if risk_factor == 'None':
+                                #         worksheet.set_row(row_index, options={'hidden': True})
+                                # worksheet.write(row_index, 12, risk_factor)
+                                worksheet.write(row_index,12, severity)
                                 worksheet.write(row_index, 13, plugin_family)
                                 worksheet.write(row_index, 14, plugin_version)
                                 if plugin_publication_date is not None:
@@ -2406,7 +2408,8 @@ class ParsingThread(QThread):
                                     worksheet.write(row_index, 9, plugin_id)
                                     worksheet.write(row_index, 10, plugin_name)
                                     worksheet.write(row_index, 11, plugin_type)
-                                    worksheet.write(row_index, 12, risk_factor)
+                                    # worksheet.write(row_index, 12, risk_factor)
+                                    worksheet.write(row_index, 12, severity)
                                     worksheet.write(row_index, 13, plugin_family)
                                     worksheet.write(row_index, 14, plugin_version)
                                     if plugin_publication_date is not None:
@@ -2451,10 +2454,11 @@ class ParsingThread(QThread):
                                 worksheet.write(row_index, 13, plugin_id)
                                 worksheet.write(row_index, 14, plugin_name)
                                 worksheet.write(row_index, 15, plugin_type)
-                                if self.report_vulnerabilities_none_filter_out:
-                                    if risk_factor == 'None':
-                                        worksheet.set_row(row_index, options={'hidden': True})
-                                worksheet.write(row_index, 16, risk_factor)
+                                # if self.report_vulnerabilities_none_filter_out:
+                                #     if risk_factor == 'None':
+                                #         worksheet.set_row(row_index, options={'hidden': True})
+                                # worksheet.write(row_index, 16, risk_factor)
+                                worksheet.write(row_index, 16, severity)
                                 worksheet.write(row_index, 17, plugin_family)
                                 worksheet.write(row_index, 18, plugin_file_name)
                                 worksheet.write(row_index, 19, plugin_version)
@@ -2504,7 +2508,8 @@ class ParsingThread(QThread):
                                     worksheet.write(row_index, 13, plugin_id)
                                     worksheet.write(row_index, 14, plugin_name)
                                     worksheet.write(row_index, 15, plugin_type)
-                                    worksheet.write(row_index, 16, risk_factor)
+                                    # worksheet.write(row_index, 16, risk_factor)
+                                    worksheet.write(row_index, 16, severity)
                                     worksheet.write(row_index, 17, plugin_family)
                                     worksheet.write(row_index, 18, plugin_file_name)
                                     worksheet.write(row_index, 19, plugin_version)
@@ -2766,6 +2771,7 @@ class ParsingThread(QThread):
                                 plugin_name = nfr.plugin.report_item_value(report_item, 'pluginName')
                                 plugin_type = nfr.plugin.report_item_value(report_item, 'plugin_type')
                                 risk_factor = nfr.plugin.report_item_value(report_item, 'risk_factor')
+                                severity = nfr.plugin.report_item_value(report_item, 'severity')
                                 plugin_family = nfr.plugin.report_item_value(report_item, 'pluginFamily')
                                 plugin_file_name = nfr.plugin.report_item_value(report_item, 'fname')
                                 plugin_version = nfr.plugin.report_item_value(report_item, 'script_version')
@@ -2813,7 +2819,8 @@ class ParsingThread(QThread):
                                     worksheet.write(row_index, 10, plugin_id)
                                     worksheet.write(row_index, 11, plugin_name)
                                     worksheet.write(row_index, 12, plugin_type)
-                                    worksheet.write(row_index, 13, risk_factor)
+                                    # worksheet.write(row_index, 13, risk_factor)
+                                    worksheet.write(row_index, 13, severity)
                                     worksheet.write(row_index, 14, plugin_family)
                                     worksheet.write(row_index, 15, compliance_plugin)
                                     worksheet.write(row_index, 16, plugin_file_name)
